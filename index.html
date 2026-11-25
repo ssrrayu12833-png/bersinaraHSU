@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bersinara — Aksi Kecil, untuk Bumi yang Lebih Baik</title>
+  <meta name="description" content="Bersinara_HSU: komunitas peduli lingkungan di Hulu Sungai Utara dengan program BERUANG (Bersih Dapat Uang)." />
+  <link rel="icon" href="assets/favicon.png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main>
+    <!-- 1. Apa itu Bersinara -->
+    <section class="hero" id="bersinara">
+      <div>
+        <span class="tag">🌱 Komunitas Peduli Lingkungan</span>
+        <h1>Apa itu <span>Bersinara</span>?</h1>
+        <p>
+          <strong>Bersinara_HSU</strong> adalah gerakan lingkungan yang diinisiasi pemuda Amuntai,
+          Kabupaten Hulu Sungai Utara. Kami percaya menjaga bumi tidak harus dimulai dari hal besar —
+          cukup dari kebiasaan kecil seperti memilah dan mengumpulkan sampah.
+        </p>
+        <p>
+          Relawan kami disebut <strong>Kawan Bersih</strong>: mereka mengedukasi, mengajak warga,
+          dan membantu pengumpulan serta pemilahan sampah bersama komunitas.
+        </p>
+        <div class="cta">
+          <a class="btn" href="daftar.html">Daftar jadi Member</a>
+          <a class="btn ghost" href="#beruang">Lihat Program BERUANG</a>
+        </div>
+      </div>
+      <img class="mascot" src="assets/beruang.jpg" alt="Maskot beruang Bersinara memegang botol plastik sambil mengacungkan jempol" />
+    </section>
+
+    <section class="block">
+      <h2>Tujuan Kami</h2>
+      <div class="grid c3">
+        <div class="card feature"><span class="emoji">♻️</span><h3>Kurangi Sampah</h3><p>Mengurangi sampah anorganik yang berpotensi mencemari lingkungan.</p></div>
+        <div class="card feature"><span class="emoji">💰</span><h3>Sampah Bernilai</h3><p>Memberi nilai ekonomi lewat sistem poin dan reward untuk sampah yang dipilah.</p></div>
+        <div class="card feature"><span class="emoji">🤝</span><h3>Kolaborasi Pemuda</h3><p>Menggerakkan pemuda dan komunitas menjadi jembatan menuju bank sampah.</p></div>
+      </div>
+    </section>
+
+    <!-- 2. Program BERUANG -->
+    <section class="block" id="beruang">
+      <h2>Program BERUANG</h2>
+      <p class="lead"><strong>Ber</strong>sih Dapat <strong>Uang</strong> — program unggulan Bersinara untuk mengajak masyarakat memilah sampah, khususnya botol plastik dan tutup botol, sekaligus mendapatkan poin yang bisa ditukar dengan reward menarik.</p>
+
+      <div class="steps">
+        <div class="step"><h3>Kumpulkan</h3><p class="muted">Kumpulkan botol plastik dan tutup botol di rumah.</p></div>
+        <div class="step"><h3>Pisahkan &amp; timbang</h3><p class="muted">Pisahkan jenisnya, lalu timbang secara terpisah.</p></div>
+        <div class="step"><h3>Dapatkan poin</h3><p class="muted">Poin dicatat admin sesuai jumlah sampah.</p></div>
+        <div class="step"><h3>Tukar reward</h3><p class="muted">Tukarkan poin dengan reward pilihan.</p></div>
+      </div>
+
+      <h3 class="center" style="margin-top:34px">Rincian Poin</h3>
+      <div class="rates" style="max-width:520px;margin:0 auto">
+        <div class="rate"><div>Botol Plastik (PET)</div><div class="big" id="rate-botol">10</div><div>poin / 1 kg</div></div>
+        <div class="rate"><div>Gelas Plastik</div><div class="big" id="rate-gelas">20</div><div>poin / 1 kg</div></div>
+      </div>
+      <p class="center muted" style="margin-top:14px">💡 Pisahkan botol dan tutup botol, karena jenis plastiknya berbeda. Minimal penukaran <strong id="min-tukar">50</strong> poin.</p>
+    </section>
+
+    <!-- 3. Daftar -->
+    <section class="cta-band" id="daftar">
+      <h2>Yuk, jadi bagian dari Bersinara!</h2>
+      <p>Daftar sebagai member, lalu pantau poin sampah yang sudah kamu kumpulkan di menu Beruang.</p>
+      <a class="btn sun" href="daftar.html">Daftar sebagai Member</a>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script type="module">
+    import { renderShell } from "./js/common.js";
+    import { RATES, MIN_TUKAR } from "./js/data.js";
+    renderShell("home");
+    document.getElementById("rate-botol").textContent = RATES.botol;
+    document.getElementById("rate-gelas").textContent = RATES.gelas;
+    document.getElementById("min-tukar").textContent = MIN_TUKAR;
+  </script>
+</body>
+</html>
