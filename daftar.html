@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daftar Member — Bersinara</title>
+  <link rel="icon" href="assets/favicon.png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main>
+    <div class="card formcard">
+      <h1 style="font-size:2rem">Daftar Member</h1>
+      <p class="muted">Isi data singkat di bawah untuk bergabung dengan program BERUANG.</p>
+
+      <form id="form" novalidate autocomplete="off">
+        <label for="nama">Nama lengkap</label>
+        <input id="nama" name="nama" type="text" maxlength="60" required autocomplete="name" />
+
+        <label for="domisili">Domisili</label>
+        <input id="domisili" name="domisili" type="text" maxlength="80" placeholder="mis. Amuntai Tengah" required />
+
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text" maxlength="20" required autocapitalize="none" autocomplete="username" />
+        <div class="hint">3–20 karakter: huruf kecil, angka, titik, atau garis bawah.</div>
+
+        <label for="password">Password</label>
+        <div class="pw-wrap">
+          <input id="password" name="password" type="password" minlength="6" maxlength="64" required autocomplete="new-password" />
+          <button type="button" id="toggle" aria-label="Tampilkan password">👁️</button>
+        </div>
+        <div class="hint">Minimal 6 karakter.</div>
+
+        <p class="error" id="err" role="alert"></p>
+        <button class="btn block" id="submit" type="submit">Daftar Sekarang</button>
+      </form>
+      <p class="center muted" style="margin:16px 0 0">Sudah punya akun? <a href="beruang.html">Masuk di sini</a></p>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script type="module" src="js/daftar.js"></script>
+</body>
+</html>
