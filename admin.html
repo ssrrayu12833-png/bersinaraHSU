@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>Admin — Bersinara</title>
+  <link rel="icon" href="assets/favicon.png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main>
+    <div id="login" class="card formcard hidden">
+      <h1 style="font-size:2rem">Login Admin</h1>
+      <p class="muted">Khusus pengurus Bersinara.</p>
+      <form id="login-form" novalidate>
+        <label for="u">Username</label>
+        <input id="u" type="text" autocapitalize="none" autocomplete="username" required />
+        <label for="p">Password</label>
+        <div class="pw-wrap">
+          <input id="p" type="password" autocomplete="current-password" required />
+          <button type="button" id="toggle" aria-label="Tampilkan password">👁️</button>
+        </div>
+        <p class="error" id="err" role="alert"></p>
+        <button class="btn block" id="btn" type="submit">Masuk</button>
+      </form>
+    </div>
+
+    <div id="panel" class="hidden">
+      <div class="hi top-actions">
+        <h1>Panel Admin</h1>
+        <button class="btn ghost small" id="logout">Keluar</button>
+      </div>
+
+      <div class="stats">
+        <div class="card stat"><b id="s-members">0</b>Member</div>
+        <div class="card stat"><b id="s-poin">0</b>Total poin</div>
+        <div class="card stat"><b id="s-siap">0</b>Siap tukar</div>
+      </div>
+
+      <label for="search" class="hidden">Cari member</label>
+      <input id="search" type="search" placeholder="🔍 Cari nama, domisili, atau username…" />
+      <div class="members" id="members"><p class="muted">Memuat…</p></div>
+    </div>
+  </main>
+
+  <dialog id="dlg">
+    <form id="dlg-form" method="dialog" novalidate>
+      <h2 id="d-title" style="margin:0">Update Poin</h2>
+      <p class="muted" id="d-sub" style="margin:0"></p>
+
+      <div class="modes" role="radiogroup" aria-label="Jenis update">
+        <label><input type="radio" name="mode" value="setor" checked /><span>♻️ Setor sampah</span></label>
+        <label><input type="radio" name="mode" value="tukar" /><span>🎁 Tukar reward</span></label>
+        <label><input type="radio" name="mode" value="manual" /><span>✏️ Manual</span></label>
+      </div>
+
+      <div id="m-setor">
+        <label for="kg-botol">Botol plastik (kg)</label>
+        <input id="kg-botol" type="number" min="0" step="0.1" inputmode="decimal" placeholder="0" />
+        <label for="kg-gelas">Gelas plastik (kg)</label>
+        <input id="kg-gelas" type="number" min="0" step="0.1" inputmode="decimal" placeholder="0" />
+      </div>
+      <div id="m-tukar" class="hidden">
+        <label for="reward">Reward</label>
+        <select id="reward"></select>
+      </div>
+      <div id="m-manual" class="hidden">
+        <label for="delta">Perubahan poin (boleh negatif)</label>
+        <input id="delta" type="number" step="1" inputmode="numeric" placeholder="mis. 25 atau -50" />
+        <label for="ket">Keterangan</label>
+        <input id="ket" type="text" maxlength="80" placeholder="mis. Koreksi poin" />
+      </div>
+
+      <div class="preview" id="preview">Perubahan: 0 poin</div>
+      <p class="error" id="d-err" role="alert"></p>
+      <div class="dlg-actions">
+        <button type="button" class="btn ghost" id="d-cancel">Batal</button>
+        <button type="submit" class="btn" id="d-save">Simpan</button>
+      </div>
+    </form>
+  </dialog>
+
+  <footer id="site-footer"></footer>
+  <script type="module" src="js/admin.js"></script>
+</body>
+</html>
