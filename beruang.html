@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Beruang — Poin Saya | Bersinara</title>
+  <link rel="icon" href="assets/favicon.png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main>
+    <!-- belum login -->
+    <div id="login" class="card formcard hidden">
+      <h1 style="font-size:2rem">Masuk Member</h1>
+      <p class="muted">Masuk untuk melihat poin <strong>BERUANG</strong> yang sudah kamu kumpulkan.</p>
+      <form id="login-form" novalidate>
+        <label for="u">Username</label>
+        <input id="u" type="text" autocapitalize="none" autocomplete="username" required />
+        <label for="p">Password</label>
+        <div class="pw-wrap">
+          <input id="p" type="password" autocomplete="current-password" required />
+          <button type="button" id="toggle" aria-label="Tampilkan password">👁️</button>
+        </div>
+        <p class="error" id="err" role="alert"></p>
+        <button class="btn block" id="btn" type="submit">Masuk</button>
+      </form>
+      <p class="center muted" style="margin:16px 0 0">Belum jadi member? <a href="daftar.html">Daftar di sini</a></p>
+    </div>
+
+    <!-- admin nyasar -->
+    <div id="isadmin" class="card formcard hidden center">
+      <h2>Akun Admin</h2>
+      <p>Akun ini adalah admin Bersinara. Kelola poin member lewat halaman admin.</p>
+      <a class="btn" href="admin.html">Ke Halaman Admin</a>
+      <p><button class="btn ghost small" data-logout style="margin-top:12px">Keluar</button></p>
+    </div>
+
+    <!-- profil belum lengkap -->
+    <div id="noprofile" class="card formcard hidden center">
+      <h2>Data profil tidak ditemukan</h2>
+      <p>Pendaftaran akun ini belum selesai tersimpan. Silakan hubungi admin Bersinara.</p>
+      <button class="btn ghost small" data-logout>Keluar</button>
+    </div>
+
+    <!-- dashboard member -->
+    <div id="dash" class="hidden">
+      <div class="hi top-actions">
+        <div>
+          <h1 id="nama">Halo!</h1>
+          <p class="muted" id="sub"></p>
+        </div>
+        <button class="btn ghost small" data-logout>Keluar</button>
+      </div>
+
+      <div class="pointcard">
+        <div class="label">Poin yang sudah kamu kumpulkan</div>
+        <div class="pts"><span id="poin">0</span><small>poin</small></div>
+        <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" id="bar"><i id="barfill" style="width:0"></i></div>
+        <div id="status" style="font-weight:800"></div>
+      </div>
+
+      <section class="block">
+        <h2>🎁 Katalog Reward</h2>
+        <p class="lead">Tukarkan poinmu di Bersinara (minimal <strong id="min">50</strong> poin). Hubungi admin untuk penukaran.</p>
+        <div id="catalog"></div>
+      </section>
+
+      <section class="block">
+        <h2>Riwayat Poin</h2>
+        <div class="card"><ul class="history" id="history"><li class="muted">Memuat…</li></ul></div>
+      </section>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script type="module" src="js/beruang.js"></script>
+</body>
+</html>
